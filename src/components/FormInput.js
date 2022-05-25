@@ -2,10 +2,12 @@ import React from 'react';
 import './FormInput.css'
 
 export const FormInput = (props) => {
+    const {label,onChange,errorMessage, id,...inputProps}=props
   return (
     <div className='form-input'>
-        <label htmlFor="">{props.placeholder}: </label>
-        <input type="text" placeholder={props.placeholder} name={props.name}/>
+        <label>{label}: </label>
+        <input {...inputProps} onChange={onChange}/>
+        <span>{errorMessage}</span>
     </div>
   )
 }
